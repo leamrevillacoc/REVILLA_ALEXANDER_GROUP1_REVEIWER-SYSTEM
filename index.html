@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviewer Organizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+
+        <input type="radio" name="nav" id="login-radio" checked hidden>
+        <input type="radio" name="nav" id="register-radio" hidden>
+        <input type="radio" name="nav" id="menu-radio" hidden>
+        <input type="radio" name="nav" id="add-subject-radio" hidden>
+        <input type="radio" name="nav" id="view-subject-radio" hidden>
+        <input type="radio" name="nav" id="open-subject-radio" hidden>
+        <input type="radio" name="nav" id="stats-radio" hidden>
+        <input type="radio" name="nav" id="open-add-notes-radio" hidden>
+        <input type="radio" name="nav" id="open-view-notes-radio" hidden>
+
+
+        <div class="section" id="login-section">
+            <h1>Reviewer Organizer</h1>
+
+            <input type="text" placeholder="Student ID">
+            <input type="password" placeholder="Password">
+
+            <div>
+                <label for="menu-radio" class="btn">Login</label>
+                <label for="register-radio" class="btn">Register</label>
+            </div>
+
+        </div>
+
+
+        <div class="section" id="register-section">
+            <h2>Register</h2>
+
+            <input type="text" placeholder="Student ID">
+            <input type="password" placeholder="Password">
+
+            <div>
+                <label for="login-radio" class="btn">Register</label>
+                <label for="login-radio" class="btn">Back</label>
+            </div>
+
+        </div>
+
+
+        <div class="section" id="menu-section">
+
+            <h1>Main Menu</h1>
+
+
+            <div class="stats">
+
+                <div class="stat-card">
+                    <h2>0</h2>
+                    <p>Total Subjects</p>
+                </div>
+
+                <div class="stat-card">
+                    <h2>0</h2>
+                    <p>Total Notes</p>
+                </div>
+
+                <div class="stat-card">
+                    <h2>0%</h2>
+                    <p>Stats</p>
+                </div>
+
+            </div>
+
+            <!-- Cards -->
+            <div class="cards">
+
+                <div class="card">
+                    <h2>➕</h2>
+                    <h3>Add Subject</h3>
+                    <p>Create a new subject</p>
+                    <label for="add-subject-radio" class="btn">Start</label>
+                </div>
+
+                <div class="card">
+                    <h2>👁️</h2>
+                    <h3>View Subjects</h3>
+                    <p>Browse subjects</p>
+                    <label for="view-subject-radio" class="btn">View</label>
+                </div>
+
+                <div class="card">
+                    <h2>📁</h2>
+                    <h3>Open Subject</h3>
+                    <p>Access notes</p>
+                    <label for="open-subject-radio" class="btn">Open</label>
+                </div>
+
+            </div>
+
+            <br>
+            <label for="login-radio" class="btn">Log Out</label>
+
+        </div>
+
+
+
+        <div class="section" id="add-subject-section">
+            <h2>Add Subject</h2>
+            <input type="text" placeholder="Subject Name">
+
+            <label for="menu-radio" class="btn">Add</label>
+            <label for="menu-radio" class="btn">Back</label>
+
+        </div>
+
+
+        <div class="section" id="view-subject-section">
+            <h2>Subjects</h2>
+
+            <ul></ul>
+
+            <label for="menu-radio" class="btn">Back</label>
+
+        </div>
+
+
+        <div class="section" id="open-subject-section">
+            <div class="section-header">
+                <h2>Open Subject</h2>
+                <div class="subject-info">
+                    <h3 id="current-subject-name">Select a Subject</h3>
+                    <span class="subject-stats" id="subject-stats">0 notes • 0% complete</span>
+                </div>
+            </div>
+
+
+            <div class="subject-tabs">
+                <label for="open-add-notes-radio" class="tab-btn active" id="add-tab">➕ Add Notes</label>
+                <label for="open-view-notes-radio" class="tab-btn" id="view-tab">📝 View Notes</label>
+            </div>
+
+
+            <input type="radio" name="nav" id="open-add-notes-radio" hidden>
+            <input type="radio" name="nav" id="open-view-notes-radio" hidden>
+
+
+            <div class="tab-content active" id="add-notes-content">
+                <div class="note-form">
+                    <input type="text" id="note-title" placeholder="Lesson Title">
+                    <textarea id="note-content" placeholder="Enter your notes here..."></textarea>
+
+                    <div class="note-labels">
+                        <label class="label-tag">
+                    <input type="radio" name="note-label" value="exam">
+                    <span>📚 Exam</span>
+                </label>
+                        <label class="label-tag">
+                    <input type="radio" name="note-label" value="quiz">
+                    <span>📝 Quiz</span>
+                </label>
+                        <label class="label-tag">
+                    <input type="radio" name="note-label" value="log">
+                    <span>📖 Long quiz</span>
+                </label>
+                        <label class="label-tag">
+                    <input type="radio" name="note-label" value="other">
+                    <span>✏️ Other</span>
+                </label>
+                    </div>
+
+                    <div class="form-actions">
+                        <label for="open-subject-radio" class="btn secondary">Cancel</label>
+                        <label for="open-subject-radio" class="btn primary" id="save-note-btn">💾 Save Note</label>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="tab-content" id="view-notes-content">
+                <div class="notes-list" id="notes-list">
+                    <div class="empty-state">
+                        <div class="empty-icon">📝</div>
+                        <h3>No notes yet</h3>
+                        <p>Add your first note to get started!</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="section-footer">
+                <label for="menu-radio" class="btn secondary">← Back to Menu</label>
+                <label for="stats-radio" class="btn primary">📊 Subject Stats</label>
+            </div>
+
+
+        </div>
+
+</body>
+
+</html>
