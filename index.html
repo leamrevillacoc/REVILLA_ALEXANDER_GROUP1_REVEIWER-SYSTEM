@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviewer Organizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Simple Note Organizer System</h1>
+
+            <section id="about">
+                <div class="about-container">
+                    <h2>About the System</h2>
+                    <p>
+                        The Simple Note Organizer System is a user-friendly website designed to help students and individuals organize their notes efficiently. This system allows users to create subjects, add notes, and categorize lessons in a simple and structured way. The
+                        main goal of this system is to make studying easier by keeping important information organized and accessible. Users can quickly add new subjects, write notes for each lesson, and label them based on categories such as quizzes,
+                        exams,long quiz, quiz.This system is designed with simplicity in mind, making it easy to use even for beginners. With a clean interface and organized layout, users can focus more on learning and less on managing their notes.
+                    </p>
+                </div>
+            </section>
+
+            <input type="radio" name="nav" id="menu-radio" checked hidden>
+            <input type="radio" name="nav" id="add-subject-radio" hidden>
+            <input type="radio" name="nav" id="view-subject-radio" hidden>
+            <input type="radio" name="nav" id="open-subject-radio" hidden>
+            <input type="radio" name="nav" id="open-add-notes-radio" hidden>
+            <input type="radio" name="nav" id="open-view-notes-radio" hidden>
+            <input type="radio" name="nav" id="stats-radio" hidden>
+            <input type="radio" name="nav" id="edit-subject-radio" hidden>
+
+            <div class="section" id="menu-section">
+                <h1>Main Menu</h1>
+
+                <div class="stats">
+                    <div class="stat-card">
+                        <h2>2</h2>
+                        <p>Total Subjects</p>
+                    </div>
+                    <div class="stat-card">
+                        <h2>0</h2>
+                        <p>Total Notes</p>
+                    </div>
+                    <div class="stat-card">
+                        <h2>25%</h2>
+                        <p>Stats</p>
+                    </div>
+                </div>
+
+                <div class="cards">
+                    <div class="card">
+                        <h3>Add Subject</h3>
+                        <p>Add new subject</p>
+                        <label for="add-subject-radio" class="btn">Start</label>
+                    </div>
+                    <div class="card">
+                        <h3>View Subjects</h3>
+                        <p>Browse subjects</p>
+                        <label for="view-subject-radio" class="btn">View</label>
+                    </div>
+                    <div class="card">
+                        <h3>Open Subject</h3>
+                        <p>Access notes</p>
+                        <label for="open-subject-radio" class="btn">Open</label>
+                    </div>
+                    <div class="card">
+                        <h3>Edit Subject</h3>
+                        <p>edit subject name and notes</p>
+                        <label for="edit-subject-radio" class="btn">Edit</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section" id="add-subject-section">
+                <h2>Add Subject</h2>
+                <input type="text" placeholder="Subject Name">
+                <label for="menu-radio" class="btn">Add</label>
+                <label for="menu-radio" class="btn">Back</label>
+            </div>
+
+            <div class="section" id="view-subject-section">
+                <h2>Subjects</h2>
+                <ul>
+                    <li>Human Computer Interaction</li>
+                    <li>Discrete Structures</li>
+                </ul>
+                <label for="menu-radio" class="btn">Back</label>
+            </div>
+
+            <div class="section" id="edit-subject-section">
+                <h2>Edit Subject</h2>
+                <input type="text" placeholder="New Subject Name">
+                <label for="menu-radio" class="btn">Save</label>
+                <label for="menu-radio" class="btn">Back</label>
+            </div>
+
+            <div class="section" id="open-subject-section">
+                <div class="section-header">
+                    <h2>Open Subject</h2>
+                    <div class="subject-info">
+                        <div class="subject-selector">
+                            <select id="current-subject-name" class="subject-dropdown">
+                                <option value="hci">Human Computer Interaction</option>
+                                <option value="Discrete">Discrete Structures</option>
+                            </select>
+                            <span class="subject-stats" id="subject-stats">0 notes | 2 exams | 0 quiz | 0 Long Quiz</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subject-tabs">
+                    <label for="open-add-notes-radio" class="tab-btn active" id="add-tab">Add Notes</label>
+                    <label for="open-view-notes-radio" class="tab-btn" id="view-tab">View Notes</label>
+                </div>
+
+                <div class="tab-content active" id="add-notes-content">
+                    <div class="note-form">
+                        <input type="text" id="note-title" placeholder="Lesson Title">
+                        <textarea id="note-content" placeholder="Enter your notes here..."></textarea>
+
+                        <div class="note-labels">
+                            <label class="label-tag">
+                                <input type="radio" name="note-label" value="exam">
+                                <span>Exam</span>
+                            </label>
+                            <label class="label-tag">
+                                <input type="radio" name="note-label" value="quiz">
+                                <span>Quiz</span>
+                            </label>
+                            <label class="label-tag">
+                                <input type="radio" name="note-label" value="long-quiz">
+                                <span>Long Quiz</span>
+                            </label>
+                            <label class="label-tag">
+                                <input type="radio" name="note-label" value="other">
+                                <span>Other</span>
+                            </label>
+                        </div>
+
+                        <div class="form-actions">
+                            <label for="open-subject-radio" class="btn secondary">Cancel</label>
+                            <label for="open-subject-radio" class="btn primary">Save Note</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="view-notes-content">
+                    <div class="whiteboard" id="notes-list">
+                        <div class="note-card">
+                            <h4></h4>
+                            <p></p>
+                            <span class="tag">Exam</span>
+                        </div>
+                        <div class="note-card">
+                            <h4></h4>
+                            <p></p>
+                            <span class="tag">Quiz</span>
+                        </div>
+                        <div class="note-card">
+                            <h4></h4>
+                            <p></p>
+                            <span class="tag"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-footer">
+                    <label for="menu-radio" class="btn secondary">← Back to Menu</label>
+                    <label for="stats-radio" class="btn primary">Subject Stats</label>
+                </div>
+            </div>
+
+    </div>
+
+</body>
+
+</html>

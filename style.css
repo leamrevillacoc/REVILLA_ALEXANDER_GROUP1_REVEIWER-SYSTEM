@@ -1,0 +1,348 @@
+html {
+    scroll-behavior: smooth;
+}
+
+#about p {
+    text-align: justify;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background: url('image.png') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+}
+
+
+/* Sections */
+
+.section {
+    display: none;
+    text-align: center;
+    padding: 20px;
+}
+
+
+/* Show section when radio is checked */
+
+#menu-radio:checked~#menu-section,
+#add-subject-radio:checked~#add-subject-section,
+#view-subject-radio:checked~#view-subject-section,
+#open-subject-radio:checked~#open-subject-section {
+    display: block;
+}
+
+h1,
+h2,
+h3 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    width: 150px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 250px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: gray;
+    margin-bottom: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 5px;
+    text-decoration: none;
+}
+
+input,
+textarea {
+    padding: 10px;
+    margin: 10px 0;
+    width: 250px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-family: inherit;
+}
+
+#open-subject-section {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.section-header {
+    margin-bottom: 2rem;
+}
+
+.subject-info {
+    background: linear-gradient(135deg, #f8f9ff 0%, #e8ecff 100%);
+    padding: 1.5rem;
+    border-radius: 16px;
+    border: 2px solid #667eea;
+}
+
+.subject-stats {
+    color: #7f8c8d;
+    font-weight: 500;
+}
+
+.subject-tabs {
+    display: flex;
+    background: white;
+    border-radius: 16px;
+    padding: 4px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    gap: 4px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 1rem;
+    background: transparent;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #7f8c8d;
+}
+
+.tab-btn.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.tab-btn:hover:not(.active) {
+    background: #f8f9ff;
+    color: #3498db;
+}
+
+.tab-content {
+    display: none;
+    animation: fadeInUp 0.4s ease-out;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.note-form {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+.note-form input,
+.note-form textarea {
+    width: 100%;
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+    border: 2px solid #ecf0f1;
+    border-radius: 12px;
+    font-size: 1rem;
+}
+
+.note-form input:focus,
+.note-form textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.note-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.note-labels {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.label-tag {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background: #f8f9ff;
+    border: 2px solid #ecf0f1;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.label-tag input {
+    display: none;
+}
+
+.label-tag input:checked+span {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+}
+
+.label-tag:hover {
+    border-color: #667eea;
+    transform: translateY(-2px);
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.notes-list {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: #7f8c8d;
+}
+
+.empty-icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.5;
+}
+
+.section-footer {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px solid #ecf0f1;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width:768px) {
+    .subject-tabs {
+        flex-direction: column;
+    }
+    .note-labels {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .form-actions,
+    .section-footer {
+        flex-direction: column;
+    }
+}
+
+header {
+    position: sticky;
+    top: 0;
+    text-align: center;
+    padding: 15px;
+}
+
+#view-subject-section {
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    background: #fafafa;
+}
+
+#view-subject-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+#view-subject-section li {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px 0;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#view-subject-section li:hover {
+    border-color: #007bff;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.15);
+}
+
+.subject-selector {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
